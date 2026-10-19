@@ -1,0 +1,26 @@
+# Entorno local de Calendar Connect App (HU-02).
+# Uso: copiar .env.example a .env, completarlo y ejecutar `docker compose up -d`.
+#
+# Pendiente de añadir con sus historias:
+#   api (HU-04 / HU-07) y bot (HU-12). Se levantarán aquí con sus Dockerfile.
+services:
+  db:
+    image: postgres:16
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-cca}
+      POSTGRES_USER: ${POSTGRES_USER:-cca}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Define POSTGRES_PASSWORD en .env}
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-cca} -d ${POSTGRES_DB:-cca}"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  dbdata:

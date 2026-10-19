@@ -1,0 +1,7 @@
+packages:
+  - "apps/*"
+  - "packages/*"
+
+# Scripts de build permitidos: esbuild (binario que usa Vitest).
+allowBuilds:
+  esbuild: true
