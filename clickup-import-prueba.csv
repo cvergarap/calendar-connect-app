@@ -1,0 +1,28 @@
+Task Name,Task Description,Status,Priority,Due Date,Tags,Folder,List
+HU-01 · Repositorio base con estándares de calidad,"Puntos: 3 · MoSCoW: Must · Épica: E0 Fundaciones
+
+HISTORIA
+Como desarrollador quiero un monorepo con TypeScript estricto, lint, formato y pruebas para trabajar con calidad desde el primer commit.
+
+CRITERIOS DE ACEPTACIÓN
+• Dado un clon limpio, cuando ejecuto pnpm install && pnpm lint && pnpm test, entonces todo pasa en verde.
+• Dado un commit con formato inválido, cuando se ejecuta el hook, entonces se rechaza (Conventional Commits).
+• Estructura según 06-arquitectura.md §7. Trazabilidad: RNF-25..30.",to do,High,2026-10-23,E0 Fundaciones,v0.1 MVP,S0 · Preparación
+HU-04 · Conectar mi cuenta de Google,"Puntos: 5 · MoSCoW: Must · Épica: E1 Calendarios
+
+HISTORIA
+Como usuario quiero autorizar mi cuenta Google personal una sola vez para que el asistente lea mis calendarios.
+
+CRITERIOS DE ACEPTACIÓN
+• Dado que no hay cuenta conectada, cuando abro /auth/google, entonces veo la pantalla de consentimiento con solo los scopes calendar.readonly y calendar.app.created.
+• Cuando apruebo, entonces el refresh token se guarda cifrado y el bot confirma ""Google conectado"".
+• Dado que el token expira, cuando el sistema lo necesita, entonces lo renueva sin intervención.
+• Si revoco el acceso, el sistema avisa por Telegram. Trazabilidad: RF-01, RNF-01, RNF-03.",to do,High,2026-10-30,E1 Calendarios,v0.1 MVP,S1 · Conexión
+HU-31 · Crear eventos directamente en Microsoft 365 vía Graph,"Puntos: 8 · MoSCoW: Won't · Épica: E8 Integraciones
+
+HISTORIA
+Crear eventos directamente en Microsoft 365 vía Graph.
+
+CRITERIOS DE ACEPTACIÓN
+• Adaptador SignalSource activable por configuración; nunca bloquea el resumen si falla.
+• Trazabilidad: RF-34.",to do,Low,,E8 Integraciones,Fase 3,Backlog Fase 3

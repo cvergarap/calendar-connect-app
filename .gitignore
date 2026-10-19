@@ -1,0 +1,26 @@
+# Secretos
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+
+# Dependencias y builds
+node_modules/
+dist/
+build/
+.next/
+coverage/
+
+# Datos locales
+backups/
+*.sqlite
+*.log
+
+# SO / editor
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+.idea/
